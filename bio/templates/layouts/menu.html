@@ -1,0 +1,102 @@
+
+
+
+	 <section class="ftco-section">
+	 <div class="container">
+	 <div class="row justify-content-center">
+	 <div class="col-md-6 text-center mb-5">
+	
+	 </div>
+	 </div>
+	 </div>
+	 <div class="container">
+	 <div class="row justify-content-between">
+	 <div class="col">
+	 <a class="navbar-brand" href="index.html"></a>
+	 </div>
+	 {% comment %} <div class="col d-flex justify-content-end"> {% endcomment %}
+	 <div class="col-md-2">
+		<ul class="social-icons">
+			<li>
+				<a href="#"><i class="icon-twitter-with-circle"></i></a>
+				<a href="#"><i class="icon-facebook-with-circle"></i></a>
+				<a href="#"><i class="icon-instagram-with-circle"></i></a>
+				<a href="#"><i class="icon-linkedin-with-circle"></i></a>
+			</li>
+		</ul>
+	 </div>
+	 </div>
+	 </div>
+	 </div>
+	 </div>
+	 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="fa fa-bars"></span> Menu
+		</button>
+		{% comment %} <form action="#" class="searchform order-lg-last">
+		<div class="form-group d-flex">
+		<input type="text" class="form-control pl-3" placeholder="Search">
+		<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+		</div>
+		</form>  {% endcomment %}
+		
+	 
+	 
+
+	 <div class="collapse navbar-collapse" id="ftco-nav">
+	 <ul class="navbar-nav mr-auto">
+	 <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+	 <li class="nav-item dropdown">
+	 <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
+	 <div class="dropdown-menu" aria-labelledby="dropdown04">
+		{% for category in categoryData %}	
+		<a href="{% url 'category' category.slug %}" class="dropdown-item">{{ category.name }}</a>
+		{% endfor %}
+	 </div>
+	 </li>
+	 
+	 <li class="nav-item"><a href="{% url 'news_api' %}" class="nav-link">News API</a></li>
+	 <li class="nav-item"><a href="{% url 'news' %}" class="nav-link">News</a></li>
+	 <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+	 </ul>
+	 </div>
+	 </div>
+	 <div class="col-lg-3 col-md-4">
+		<form action="{% url 'news' %}" method="post">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-md-10">
+					<input type="text" class="form-control" required name="search">
+					
+				</div>
+				<div class="col-md-2" style="padding-left:0;">
+					<button type="submit" class="btn btn-primary">Search</i></button>
+					</button>
+				</div>
+			 </div>
+		</form>
+	 </div>
+
+	 </nav>
+	 
+	 </section>
+	 
+ 	 
+	 <script src="js/jquery.min.js"></script>
+	 <script src="js/popper.js"></script>
+	 <script src="js/bootstrap.min.js"></script>
+	 <script src="js/main.js"></script>
+	 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7c9b09f6ba399e7d","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
+	 </body>
+	 </html> 
+	 
+
+
+
+
+
+
+
+
+
